@@ -1,0 +1,15 @@
+{
+	"SourceFiles": [
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector/BatteryCollector.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RD/RD.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderBlueprint/RiderBlueprint.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderGameControl/RiderGameControl.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderLC/RiderLC.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderLink/RiderLink.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderLogging/RiderLogging.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Plugins/Developer/RiderLink/Source/RiderShaderInfo/RiderShaderInfo.Build.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector.Target.cs",
+		"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollectorEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}

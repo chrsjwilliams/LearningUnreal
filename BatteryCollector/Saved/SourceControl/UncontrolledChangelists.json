@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/StarterContent/Maps/StarterMap_BuiltData.uasset",
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/ThirdPerson/Maps/CollectorLevel.umap",
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/Actors/BP_PickupBase.uasset",
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/ExampleContent/Blueprint_Communication/Meshes/SM_Battery_Medium.uasset",
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/Actors/BP_BatteryPickup.uasset"
+			]
+		}
+	]
+}

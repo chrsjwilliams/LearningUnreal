@@ -1,0 +1,8 @@
+// pull in the shared settings for all configs for this target
+#include "BatteryCollector.xcconfig"
+
+// Unreal per-config variables
+UE_TARGET_CONFIG = DebugGame
+UE_UBT_BINARY_SUBPATH = BatteryCollector-IOS-DebugGame
+UE_IOS_EXECUTABLE_NAME = BatteryCollector-IOS-DebugGame
+PRODUCT_NAME = BatteryCollector-IOS-DebugGame
