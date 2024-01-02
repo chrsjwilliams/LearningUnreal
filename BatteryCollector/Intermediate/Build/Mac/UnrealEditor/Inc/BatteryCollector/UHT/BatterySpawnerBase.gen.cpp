@@ -56,7 +56,7 @@ void EmptyLinkFunctionForGeneratedCodeBatterySpawnerBase() {}
 		{ "ModuleRelativePath", "Public/Spawners/BatterySpawnerBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterySpawnerBase, nullptr, "GetRandomSpawnPoint", nullptr, nullptr, Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::BatterySpawnerBase_eventGetRandomSpawnPoint_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14820401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::Function_MetaDataParams) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatterySpawnerBase, nullptr, "GetRandomSpawnPoint", nullptr, nullptr, Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::BatterySpawnerBase_eventGetRandomSpawnPoint_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54820401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::Function_MetaDataParams) };
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::PropPointers) < 2048);
 	static_assert(sizeof(Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint_Statics::BatterySpawnerBase_eventGetRandomSpawnPoint_Parms) < MAX_uint16);
 	UFunction* Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint()
@@ -88,6 +88,14 @@ void EmptyLinkFunctionForGeneratedCodeBatterySpawnerBase() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ActorToSpawn_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_ActorToSpawn;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MinSpawnDelay_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MinSpawnDelay;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxSpawnDelay_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxSpawnDelay;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -98,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeBatterySpawnerBase() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABatterySpawnerBase_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABatterySpawnerBase_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint, "GetRandomSpawnPoint" }, // 928977578
+		{ &Z_Construct_UFunction_ABatterySpawnerBase_GetRandomSpawnPoint, "GetRandomSpawnPoint" }, // 630875851
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABatterySpawnerBase_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -122,9 +130,25 @@ void EmptyLinkFunctionForGeneratedCodeBatterySpawnerBase() {}
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_ActorToSpawn = { "ActorToSpawn", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatterySpawnerBase, ActorToSpawn), Z_Construct_UClass_UClass, Z_Construct_UClass_APickupBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_ActorToSpawn_MetaData), Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_ActorToSpawn_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MinSpawnDelay_MetaData[] = {
+		{ "Category", "Spawner" },
+		{ "ModuleRelativePath", "Public/Spawners/BatterySpawnerBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MinSpawnDelay = { "MinSpawnDelay", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatterySpawnerBase, MinSpawnDelay), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MinSpawnDelay_MetaData), Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MinSpawnDelay_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MaxSpawnDelay_MetaData[] = {
+		{ "Category", "Spawner" },
+		{ "ModuleRelativePath", "Public/Spawners/BatterySpawnerBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MaxSpawnDelay = { "MaxSpawnDelay", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatterySpawnerBase, MaxSpawnDelay), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MaxSpawnDelay_MetaData), Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MaxSpawnDelay_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABatterySpawnerBase_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_SpawnVolume,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_ActorToSpawn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MinSpawnDelay,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatterySpawnerBase_Statics::NewProp_MaxSpawnDelay,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABatterySpawnerBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABatterySpawnerBase>::IsAbstract,
@@ -164,9 +188,9 @@ void EmptyLinkFunctionForGeneratedCodeBatterySpawnerBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Spawners_BatterySpawnerBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABatterySpawnerBase, ABatterySpawnerBase::StaticClass, TEXT("ABatterySpawnerBase"), &Z_Registration_Info_UClass_ABatterySpawnerBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABatterySpawnerBase), 2424291556U) },
+		{ Z_Construct_UClass_ABatterySpawnerBase, ABatterySpawnerBase::StaticClass, TEXT("ABatterySpawnerBase"), &Z_Registration_Info_UClass_ABatterySpawnerBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABatterySpawnerBase), 2593978123U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Spawners_BatterySpawnerBase_h_2930690631(TEXT("/Script/BatteryCollector"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Spawners_BatterySpawnerBase_h_537296922(TEXT("/Script/BatteryCollector"),
 		Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Spawners_BatterySpawnerBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Spawners_BatterySpawnerBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

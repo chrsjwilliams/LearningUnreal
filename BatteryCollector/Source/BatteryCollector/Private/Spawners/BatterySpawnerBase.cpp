@@ -14,6 +14,9 @@ ABatterySpawnerBase::ABatterySpawnerBase()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	MinSpawnDelay = 0.5f;
+	MaxSpawnDelay = 5.0f;
+	
 	SpawnVolume = CreateDefaultSubobject<UBoxComponent>(TEXT("Spawner"));
 }
 
@@ -21,7 +24,14 @@ ABatterySpawnerBase::ABatterySpawnerBase()
 void ABatterySpawnerBase::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	RandomSpawnDelay = FMath::RandRange(MinSpawnDelay, MaxSpawnDelay);
+
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle,
+										this,
+										&ABatterySpawnerBase::SpawnBatteryActor,
+										RandomSpawnDelay,
+										false);
 }
 
 // Called every frame
@@ -30,7 +40,7 @@ void ABatterySpawnerBase::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-FVector ABatterySpawnerBase::GetRandomSpawnPoint()
+FVector ABatterySpawnerBase::GetRandomSpawnPoint() const
 {
 	const FVector SpawnOrigin = SpawnVolume->Bounds.Origin;
 	const FVector SpawnLimits = SpawnVolume->Bounds.BoxExtent;
@@ -42,7 +52,6 @@ void ABatterySpawnerBase::SpawnBatteryActor()
 {
 	// Make sure we have an Actor to spawn
 	if(!ActorToSpawn) return;
-
 	// Set random rotation
 	FRotator Rotation;
 	Rotation.Yaw = FMath::RandRange(1, 3) * 360.0f;
@@ -60,5 +69,12 @@ void ABatterySpawnerBase::SpawnBatteryActor()
 	if(!GetWorld()) return;
 
 	APickupBase* SpawnedActor = GetWorld()->SpawnActor<APickupBase>(ActorToSpawn, GetRandomSpawnPoint(), Rotation, Params);
+	
+	RandomSpawnDelay = FMath::RandRange(MinSpawnDelay, MaxSpawnDelay);
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle,
+										this,
+										&ABatterySpawnerBase::SpawnBatteryActor,
+										RandomSpawnDelay,
+										false);
 }
 
