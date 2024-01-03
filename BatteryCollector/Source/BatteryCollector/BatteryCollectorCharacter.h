@@ -27,6 +27,9 @@ class ABatteryCollectorCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FollowCamera;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision, meta = (AllowPrivateAccess = "true"))
+	class USphereComponent* CollisionSphere;
 	
 	/** MappingContext */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
@@ -64,10 +67,34 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay();
 
+	UFUNCTION(BlueprintCallable)
+	void CollectPickup();
+
+#pragma region POWER LEVEL
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power")
+	float BasePowerLevel;
+	UPROPERTY(VisibleAnywhere, Category="Power")
+	int CurrentPowerLevel;
+
+public:
+	UFUNCTION(BlueprintPure, Category="Power")
+	float GetCurrentBaseLevel();
+	UFUNCTION(BlueprintPure, Category="Power")
+	float GetCurrentPowerLevel();
+
+	UFUNCTION(BlueprintCallable, Category="Power")
+	void UpdateCurrentPowerLevel(float Amount);
+	
+#pragma endregion 
+
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	FORCEINLINE class USphereComponent* GetCollisionSphere() const { return CollisionSphere; }
 };
 

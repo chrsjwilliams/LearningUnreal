@@ -10,6 +10,7 @@ ABatteryPickup::ABatteryPickup()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	PickupMesh->SetSimulatePhysics(true);
+	ChargeAmount = 100.0f;
 }
 
 // Called when the game starts or when spawned
@@ -22,5 +23,17 @@ void ABatteryPickup::BeginPlay()
 void ABatteryPickup::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+void ABatteryPickup::OnPickUpCollected_Implementation()
+{
+	Super::OnPickUpCollected_Implementation();
+
+	Destroy();
+}
+
+float ABatteryPickup::GetChargeAmount()
+{
+	return ChargeAmount;
 }
 

@@ -3856,4 +3856,10 @@
   ../Plugins/EnhancedInput/Intermediate/Build/Mac/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputSubsystemInterface.generated.h \
   Runtime/Engine/Public/Subsystems/LocalPlayerSubsystem.h \
   Runtime/Engine/Public/Subsystems/WorldSubsystem.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Mac/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputSubsystems.generated.h
+  ../Plugins/EnhancedInput/Intermediate/Build/Mac/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputSubsystems.generated.h \
+  Runtime/Engine/Classes/Components/SphereComponent.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/Engine/UHT/SphereComponent.generated.h \
+  /Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector/Public/Pickups/BatteryPickup.h \
+  /Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector/Public/Pickups/PickupBase.h \
+  /Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Intermediate/Build/Mac/UnrealEditor/Inc/BatteryCollector/UHT/PickupBase.generated.h \
+  /Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Intermediate/Build/Mac/UnrealEditor/Inc/BatteryCollector/UHT/BatteryPickup.generated.h

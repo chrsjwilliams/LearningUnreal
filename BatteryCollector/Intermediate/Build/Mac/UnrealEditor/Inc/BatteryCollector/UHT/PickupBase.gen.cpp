@@ -15,6 +15,13 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_BatteryCollector();
 // End Cross Module References
+	DEFINE_FUNCTION(APickupBase::execOnPickUpCollected)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnPickUpCollected_Implementation();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APickupBase::execSetPickUpIsActive)
 	{
 		P_GET_UBOOL(Z_Param_isActive);
@@ -30,11 +37,17 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		*(bool*)Z_Param__Result=P_THIS->IsPickUpActive();
 		P_NATIVE_END;
 	}
+	static FName NAME_APickupBase_OnPickUpCollected = FName(TEXT("OnPickUpCollected"));
+	void APickupBase::OnPickUpCollected()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_APickupBase_OnPickUpCollected),NULL);
+	}
 	void APickupBase::StaticRegisterNativesAPickupBase()
 	{
 		UClass* Class = APickupBase::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "IsPickUpActive", &APickupBase::execIsPickUpActive },
+			{ "OnPickUpCollected", &APickupBase::execOnPickUpCollected },
 			{ "SetPickUpIsActive", &APickupBase::execSetPickUpIsActive },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -82,6 +95,28 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APickupBase_IsPickUpActive_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Pickups/PickupBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APickupBase, nullptr, "OnPickUpCollected", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020C00, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics::Function_MetaDataParams), Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_APickupBase_OnPickUpCollected()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APickupBase_OnPickUpCollected_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -152,6 +187,7 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_APickupBase_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_APickupBase_IsPickUpActive, "IsPickUpActive" }, // 1756138336
+		{ &Z_Construct_UFunction_APickupBase_OnPickUpCollected, "OnPickUpCollected" }, // 2039700515
 		{ &Z_Construct_UFunction_APickupBase_SetPickUpIsActive, "SetPickUpIsActive" }, // 1765134768
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_APickupBase_Statics::FuncInfo) < 2048);
@@ -210,9 +246,9 @@ void EmptyLinkFunctionForGeneratedCodePickupBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Pickups_PickupBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APickupBase, APickupBase::StaticClass, TEXT("APickupBase"), &Z_Registration_Info_UClass_APickupBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APickupBase), 3501628663U) },
+		{ Z_Construct_UClass_APickupBase, APickupBase::StaticClass, TEXT("APickupBase"), &Z_Registration_Info_UClass_APickupBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APickupBase), 168095472U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Pickups_PickupBase_h_978135011(TEXT("/Script/BatteryCollector"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Pickups_PickupBase_h_1403979307(TEXT("/Script/BatteryCollector"),
 		Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Pickups_PickupBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_Public_Pickups_PickupBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -10,6 +10,9 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Components/SphereComponent.h"
+#include "Pickups/BatteryPickup.h"
+#include "Pickups/PickupBase.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -52,6 +55,13 @@ ABatteryCollectorCharacter::ABatteryCollectorCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	CollisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("Collision Sphere"));
+	CollisionSphere->SetupAttachment(RootComponent);
+	CollisionSphere->SetSphereRadius(200.0f);
+
+	BasePowerLevel = 2500.0f;
+	CurrentPowerLevel = BasePowerLevel;
 }
 
 void ABatteryCollectorCharacter::BeginPlay()
@@ -69,6 +79,56 @@ void ABatteryCollectorCharacter::BeginPlay()
 	}
 }
 
+void ABatteryCollectorCharacter::CollectPickup()
+{
+	// Create array to place overlapped Actors
+	TArray<AActor*> OverlappedActors;
+
+	float CachedPowerLevel = 0.0f;
+	
+	// Fill array by getting Actors in out collision sphere
+	CollisionSphere->GetOverlappingActors(OverlappedActors);
+	// Iterate over array and cast Actors found into a PickupBase
+	for(int i = 0; i < OverlappedActors.Num(); ++i)
+	{
+		APickupBase* OverlappedActor = Cast<APickupBase>(OverlappedActors[i]);
+		// If the Actor found is a Pickup and it is active and not about to be destroyed
+		// then call OnCollected() and set its activity to false
+		if(OverlappedActor && OverlappedActor->IsPickUpActive() && !OverlappedActor->IsPendingKill())
+		{
+			OverlappedActor->OnPickUpCollected();
+
+			ABatteryPickup* BatteryPickup = Cast<ABatteryPickup>(OverlappedActor);
+			if(BatteryPickup)
+			{
+				CachedPowerLevel += BatteryPickup->GetChargeAmount();
+			}
+			
+			OverlappedActor->SetPickUpIsActive(false);
+		}
+	}
+
+	if(CachedPowerLevel == 0.0f) return;
+	
+	UpdateCurrentPowerLevel(CachedPowerLevel);
+}
+
+float ABatteryCollectorCharacter::GetCurrentBaseLevel()
+{
+	return BasePowerLevel;
+}
+
+float ABatteryCollectorCharacter::GetCurrentPowerLevel()
+{
+	return  CurrentPowerLevel;
+}
+
+void ABatteryCollectorCharacter::UpdateCurrentPowerLevel(float Amount)
+{
+	CurrentPowerLevel += Amount;
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Magenta, FString::Printf(TEXT("Power Level: %i"), CurrentPowerLevel));
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -80,6 +140,8 @@ void ABatteryCollectorCharacter::SetupPlayerInputComponent(UInputComponent* Play
 		// Jumping
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+
+		PlayerInputComponent->BindAction("Collect", IE_Pressed, this, &ABatteryCollectorCharacter::CollectPickup);
 
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ABatteryCollectorCharacter::Move);
