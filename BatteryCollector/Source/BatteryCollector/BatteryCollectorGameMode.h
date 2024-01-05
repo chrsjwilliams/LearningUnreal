@@ -13,6 +13,17 @@ class ABatteryCollectorGameMode : public AGameModeBase
 
 public:
 	ABatteryCollectorGameMode();
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
+	float DelayTime;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
+	float DecayAmount;
+
+
+	virtual void BeginPlay() override;
+	
+	void StartPowerLevelDecay();
 };
 
 

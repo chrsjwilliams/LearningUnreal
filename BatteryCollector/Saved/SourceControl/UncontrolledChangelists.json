@@ -9,7 +9,8 @@
 				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/ThirdPerson/Maps/CollectorLevel.umap",
 				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/Actors/BP_PickupBase.uasset",
 				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/ExampleContent/Blueprint_Communication/Meshes/SM_Battery_Medium.uasset",
-				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/Actors/BP_BatteryPickup.uasset"
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/Actors/BP_BatteryPickup.uasset",
+				"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Content/DEV/CORE/Blueprints/GameModes/BP_GameMode.uasset"
 			]
 		}
 	]
