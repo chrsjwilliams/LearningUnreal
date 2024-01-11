@@ -14,13 +14,27 @@ class ABatteryCollectorGameMode : public AGameModeBase
 public:
 	ABatteryCollectorGameMode();
 
+	UFUNCTION(BlueprintPure)
+	float GetPowerAmountToWin() const;
+
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
 	float DelayTime;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
 	float DecayAmount;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
+	float PowerAmountToWin;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
+	float PowerToWinMultiplier;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category="Power")
+	TSubclassOf<class UUserWidget> MainHUDClass;
+
+	UPROPERTY()
+	class UUserWidget* ActiveWidget;
+	
 	virtual void BeginPlay() override;
 	
 	void StartPowerLevelDecay();

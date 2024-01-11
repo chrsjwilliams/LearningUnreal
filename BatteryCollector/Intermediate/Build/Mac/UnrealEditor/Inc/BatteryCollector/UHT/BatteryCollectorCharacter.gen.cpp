@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 	BATTERYCOLLECTOR_API UClass* Z_Construct_UClass_ABatteryCollectorCharacter_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
@@ -41,6 +42,13 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 		*(float*)Z_Param__Result=P_THIS->GetCurrentBaseLevel();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ABatteryCollectorCharacter::execUpdatePlayerMaterialColor)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->UpdatePlayerMaterialColor();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABatteryCollectorCharacter::execCollectPickup)
 	{
 		P_FINISH;
@@ -56,6 +64,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 			{ "GetCurrentBaseLevel", &ABatteryCollectorCharacter::execGetCurrentBaseLevel },
 			{ "GetCurrentPowerLevel", &ABatteryCollectorCharacter::execGetCurrentPowerLevel },
 			{ "UpdateCurrentPowerLevel", &ABatteryCollectorCharacter::execUpdateCurrentPowerLevel },
+			{ "UpdatePlayerMaterialColor", &ABatteryCollectorCharacter::execUpdatePlayerMaterialColor },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -186,6 +195,28 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BatteryCollectorCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABatteryCollectorCharacter, nullptr, "UpdatePlayerMaterialColor", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ABatteryCollectorCharacter);
 	UClass* Z_Construct_UClass_ABatteryCollectorCharacter_NoRegister()
 	{
@@ -231,9 +262,21 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_BasePowerLevel;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BaseSpeed_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_BaseSpeed;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpeedMultiplier_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_SpeedMultiplier;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentPowerLevel_MetaData[];
 #endif
 		static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentPowerLevel;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PowerLevelDynamicMaterial_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_PowerLevelDynamicMaterial;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -248,6 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 		{ &Z_Construct_UFunction_ABatteryCollectorCharacter_GetCurrentBaseLevel, "GetCurrentBaseLevel" }, // 591614658
 		{ &Z_Construct_UFunction_ABatteryCollectorCharacter_GetCurrentPowerLevel, "GetCurrentPowerLevel" }, // 1990517319
 		{ &Z_Construct_UFunction_ABatteryCollectorCharacter_UpdateCurrentPowerLevel, "UpdateCurrentPowerLevel" }, // 3972412737
+		{ &Z_Construct_UFunction_ABatteryCollectorCharacter_UpdatePlayerMaterialColor, "UpdatePlayerMaterialColor" }, // 1297969787
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -360,12 +404,33 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BasePowerLevel = { "BasePowerLevel", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatteryCollectorCharacter, BasePowerLevel), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BasePowerLevel_MetaData), Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BasePowerLevel_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BaseSpeed_MetaData[] = {
+		{ "Category", "Power" },
+		{ "ModuleRelativePath", "BatteryCollectorCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BaseSpeed = { "BaseSpeed", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatteryCollectorCharacter, BaseSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BaseSpeed_MetaData), Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BaseSpeed_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_SpeedMultiplier_MetaData[] = {
+		{ "Category", "Power" },
+		{ "ModuleRelativePath", "BatteryCollectorCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_SpeedMultiplier = { "SpeedMultiplier", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatteryCollectorCharacter, SpeedMultiplier), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_SpeedMultiplier_MetaData), Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_SpeedMultiplier_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CurrentPowerLevel_MetaData[] = {
 		{ "Category", "Power" },
 		{ "ModuleRelativePath", "BatteryCollectorCharacter.h" },
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CurrentPowerLevel = { "CurrentPowerLevel", nullptr, (EPropertyFlags)0x0020080000020001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatteryCollectorCharacter, CurrentPowerLevel), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CurrentPowerLevel_MetaData), Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CurrentPowerLevel_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_PowerLevelDynamicMaterial_MetaData[] = {
+		{ "Category", "Power|VFX" },
+		{ "ModuleRelativePath", "BatteryCollectorCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_PowerLevelDynamicMaterial = { "PowerLevelDynamicMaterial", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABatteryCollectorCharacter, PowerLevelDynamicMaterial), Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_PowerLevelDynamicMaterial_MetaData), Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_PowerLevelDynamicMaterial_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABatteryCollectorCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CameraBoom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_FollowCamera,
@@ -375,7 +440,10 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_LookAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BasePowerLevel,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_BaseSpeed,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_SpeedMultiplier,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_CurrentPowerLevel,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABatteryCollectorCharacter_Statics::NewProp_PowerLevelDynamicMaterial,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABatteryCollectorCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABatteryCollectorCharacter>::IsAbstract,
@@ -415,9 +483,9 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollectorCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_BatteryCollectorCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABatteryCollectorCharacter, ABatteryCollectorCharacter::StaticClass, TEXT("ABatteryCollectorCharacter"), &Z_Registration_Info_UClass_ABatteryCollectorCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABatteryCollectorCharacter), 2227371565U) },
+		{ Z_Construct_UClass_ABatteryCollectorCharacter, ABatteryCollectorCharacter::StaticClass, TEXT("ABatteryCollectorCharacter"), &Z_Registration_Info_UClass_ABatteryCollectorCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABatteryCollectorCharacter), 927101072U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_BatteryCollectorCharacter_h_3567448751(TEXT("/Script/BatteryCollector"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_BatteryCollectorCharacter_h_1680820258(TEXT("/Script/BatteryCollector"),
 		Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_BatteryCollectorCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealEngine_LearningUnreal_BatteryCollector_Source_BatteryCollector_BatteryCollectorCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -1,8 +1,10 @@
 -c
 -pipe
 -I"."
+-I"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector/Private"
 -I"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Intermediate/Build/Mac/UnrealEditor/Inc/BatteryCollector/UHT"
 -I"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source"
+-I"/Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Source/BatteryCollector/Public"
 -I"Runtime/Core/Public"
 -I"Runtime/Core/Internal"
 -I"Runtime/TraceLog/Public"

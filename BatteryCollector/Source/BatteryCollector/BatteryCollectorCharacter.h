@@ -63,6 +63,8 @@ protected:
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	virtual  void OnConstruction(const FTransform& Transform) override;
 	
 	// To add mapping context
 	virtual void BeginPlay();
@@ -75,9 +77,18 @@ protected:
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power")
 	float BasePowerLevel;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power")
+	float BaseSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Power")
+	float SpeedMultiplier;
 	UPROPERTY(VisibleAnywhere, Category="Power")
 	int CurrentPowerLevel;
 
+	UPROPERTY(BlueprintReadWrite, Category="Power|VFX")
+	UMaterialInstanceDynamic* PowerLevelDynamicMaterial;
+	UFUNCTION(BlueprintCallable)
+	void UpdatePlayerMaterialColor();
+	
 public:
 	UFUNCTION(BlueprintPure, Category="Power")
 	float GetCurrentBaseLevel();

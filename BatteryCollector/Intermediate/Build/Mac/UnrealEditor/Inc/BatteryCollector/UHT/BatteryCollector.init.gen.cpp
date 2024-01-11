@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollector_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x4A0F6B0D,
+				0x6D6E473C,
 				0x019E3A2C,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeBatteryCollector_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_BatteryCollector.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BatteryCollector(Z_Construct_UPackage__Script_BatteryCollector, TEXT("/Script/BatteryCollector"), Z_Registration_Info_UPackage__Script_BatteryCollector, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4A0F6B0D, 0x019E3A2C));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_BatteryCollector(Z_Construct_UPackage__Script_BatteryCollector, TEXT("/Script/BatteryCollector"), Z_Registration_Info_UPackage__Script_BatteryCollector, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6D6E473C, 0x019E3A2C));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -3793,19 +3793,76 @@
   ../Intermediate/Build/Mac/UnrealEditor/Inc/Engine/UHT/Character.generated.h \
   Runtime/Core/Public/Logging/LogMacros.h \
   /Users/chriswilliams/UnrealEngine/LearningUnreal/BatteryCollector/Intermediate/Build/Mac/UnrealEditor/Inc/BatteryCollector/UHT/BatteryCollectorCharacter.generated.h \
-  Runtime/Engine/Classes/Kismet/GameplayStatics.h \
+  Runtime/UMG/Public/Blueprint/UserWidget.h \
+  Runtime/UMG/Public/Blueprint/WidgetChild.h \
+  Runtime/CoreUObject/Public/UObject/WeakObjectPtr.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/WidgetChild.generated.h \
+  Runtime/CoreUObject/Public/UObject/ObjectSaveContext.h \
+  Runtime/Core/Public/Containers/UnrealString.h \
+  Runtime/Core/Public/HAL/Platform.h \
+  Runtime/CoreUObject/Public/UObject/ObjectSaveOverride.h \
+  Runtime/Core/Public/Containers/Array.h \
+  Runtime/CoreUObject/Public/UObject/FieldPath.h \
+  Runtime/SlateCore/Public/Styling/SlateColor.h \
+  Runtime/SlateCore/Public/Layout/Geometry.h \
+  Runtime/SlateCore/Public/Input/CursorReply.h \
+  Runtime/SlateCore/Public/Input/Events.h \
+  Runtime/SlateCore/Public/Input/Reply.h \
+  Runtime/SlateCore/Public/Widgets/SWidget.h \
+  Runtime/SlateCore/Public/Layout/Margin.h \
+  Runtime/UMG/Public/Components/SlateWrapperTypes.h \
+  Runtime/Core/Public/Misc/Attribute.h \
+  Runtime/Slate/Public/Widgets/Input/IVirtualKeyboardEntry.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/SlateWrapperTypes.generated.h \
+  Runtime/UMG/Public/Components/Widget.h \
+  Runtime/FieldNotification/Public/FieldNotificationDeclaration.h \
+  Runtime/FieldNotification/Public/FieldNotificationId.h \
+  Runtime/FieldNotification/Public/IFieldNotificationClassDescriptor.h \
+  Runtime/FieldNotification/Public/INotifyFieldValueChanged.h \
   Runtime/CoreUObject/Public/UObject/Interface.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/FieldNotification/UHT/INotifyFieldValueChanged.generated.h \
+  Runtime/SlateCore/Public/Layout/Visibility.h \
+  Runtime/SlateCore/Public/Types/SlateStructs.h \
+  Runtime/UMG/Public/Components/Visual.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/Visual.generated.h \
+  Runtime/SlateCore/Public/Styling/SlateBrush.h \
+  Runtime/CoreUObject/Public/UObject/TextProperty.h \
+  Runtime/UMG/Public/Slate/WidgetTransform.h \
+  Runtime/Core/Public/Math/TransformCalculus2D.h \
+  Runtime/SlateCore/Public/Rendering/SlateRenderTransform.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/WidgetTransform.generated.h \
+  Runtime/CoreUObject/Public/UObject/UObjectThreadContext.h \
+  Runtime/UMG/Public/Blueprint/WidgetNavigation.h \
+  Runtime/SlateCore/Public/Types/NavigationMetaData.h \
+  Runtime/SlateCore/Public/Types/SlateEnums.h \
+  Runtime/SlateCore/Public/Input/NavigationReply.h \
+  Runtime/SlateCore/Public/Types/ISlateMetaData.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/WidgetNavigation.generated.h \
+  Runtime/SlateCore/Public/Widgets/WidgetPixelSnapping.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/Widget.generated.h \
+  Runtime/UMG/Public/Components/NamedSlotInterface.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/NamedSlotInterface.generated.h \
+  Runtime/Engine/Classes/Engine/World.h \
+  Runtime/Engine/Classes/Engine/LocalPlayer.h \
+  Runtime/Slate/Public/Widgets/Layout/Anchors.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/Slate/UHT/Anchors.generated.h \
+  Runtime/Core/Public/Logging/MessageLog.h \
+  Runtime/Core/Public/Stats/Stats.h Runtime/Engine/Public/EngineStats.h \
+  Runtime/SlateCore/Public/SlateGlobals.h \
+  Runtime/UMG/Public/Animation/WidgetAnimationEvents.h \
+  Runtime/Core/Public/Delegates/DelegateCombinations.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/WidgetAnimationEvents.generated.h \
+  ../Intermediate/Build/Mac/UnrealEditor/Inc/UMG/UHT/UserWidget.generated.h \
+  Runtime/Engine/Classes/Kismet/GameplayStatics.h \
   Runtime/Engine/Public/CollisionQueryParams.h \
   Runtime/Engine/Classes/Engine/LatentActionManager.h \
   Runtime/Engine/Classes/Kismet/BlueprintFunctionLibrary.h \
   Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h \
   Runtime/Engine/Classes/Engine/HitResult.h \
   Runtime/CoreUObject/Public/UObject/UnrealType.h \
-  Runtime/CoreUObject/Public/UObject/TextProperty.h \
   Runtime/CoreUObject/Public/UObject/SoftObjectPtr.h \
   Runtime/CoreUObject/Public/UObject/PropertyAccessUtil.h \
-  Runtime/Core/Public/Containers/UnrealString.h \
-  Runtime/Core/Public/CoreGlobals.h Runtime/Core/Public/HAL/Platform.h \
+  Runtime/Core/Public/CoreGlobals.h \
   Runtime/Core/Public/Misc/EnumClassFlags.h \
   Runtime/Core/Public/Templates/Function.h \
   Runtime/Core/Public/Templates/UniquePtr.h \

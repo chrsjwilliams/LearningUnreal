@@ -22,6 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execUpdateCurrentPowerLevel); \
 	DECLARE_FUNCTION(execGetCurrentPowerLevel); \
 	DECLARE_FUNCTION(execGetCurrentBaseLevel); \
+	DECLARE_FUNCTION(execUpdatePlayerMaterialColor); \
 	DECLARE_FUNCTION(execCollectPickup);
 
 
